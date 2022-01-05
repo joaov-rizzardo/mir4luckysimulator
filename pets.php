@@ -15,19 +15,174 @@
 
 <script>
     function invocaPet(qtd) {
-        let elemento =  document.querySelector('#invocacoes')
+        let elemento = document.querySelector('#invocacoes')
         elemento.innerHTML = ''
         for (let i = 0; i < qtd; i++) {
             let div = document.createElement('div');
             let img = document.createElement('img');
-            img.src = './images/teste.png'
+            let pet = gerarAleatorio()
+            let nomePet = pet.pet
+            let grau = pet.grau
+            let petImg = pet.img
+            img.src = petImg
             let h5 = document.createElement('h5');
-            h5.innerHTML = 'Raposa de Três Caudas da Neve';
+            h5.innerHTML = nomePet;
+            let p = document.createElement('p');
+            p.innerHTML = grau
+            if(grau == 'requintado'){
+                p.style.color = 'green'
+            }else if(grau == 'raro'){
+                p.style.color = 'blue'
+            }else if(grau == 'heroico'){
+                p.style.color = 'red'
+            }
             div.appendChild(img)
             div.appendChild(h5);
+            div.appendChild(p)
             elemento.appendChild(div)
         }
 
+    }
+
+    function gerarAleatorio() {
+        const numero = Math.random() * 100;
+        let pet = ''
+        if (numero <= 97) {
+            grau = 'requintado'
+            let chance = 100 / 12;
+            const valor = Math.random() * 100;
+            if (valor <= 1 * chance) {
+                pet = 'Muumuu, o Mestre dos Touros'
+                img = './images/muumuu.png'
+            } else if (valor <= 2 * chance) {
+                pet = 'Iluminacão, o Mestre da Lanterna'
+                img = './images/iluminacao.png'
+            } else if (valor <= 3 * chance) {
+                pet = 'Corojel, o Deus Guerreiro'
+                img = './images/corojel.png'
+            } else if (valor <= 4 * chance) {
+                pet = 'Popotamus, o Feiticeiro Hipopótamo'
+                img = './images/popotamus.png'
+            } else if (valor <= 5 * chance) {
+                pet = 'Brutus, o Senhor dos Oceanos'
+                img = './images/brutus.png'
+            } else if (valor <= 6 * chance) {
+                pet = 'Saltita, o Guru Coelho'
+                img = './images/saltita.png'
+            } else if (valor <= 7 * chance) {
+                pet = 'Besouraleiro Carapaça'
+                img = './images/besouraleiro.png'
+            } else if (valor <= 8 * chance) {
+                pet = 'Cãomandante, o Chefe Canino'
+                img = './images/caomandante.png'
+            } else if (valor <= 9 * chance) {
+                pet = 'Grande Sábio Símio, o Rei Macaco'
+                img = './images/macaco.png'
+            } else if (valor <= 10 * chance) {
+                pet = 'Chacha, o Mestre do Disfarce'
+                img = './images/chacha.png'
+            } else if (valor <= 11 * chance) {
+                pet = 'Meditogato, o Gato Celestial'
+                img = './images/meditogato.png'
+            } else if (valor <= 12 * chance) {
+                pet = 'Mosla, a Serpente Obscura'
+                img = './images/mosla.png'
+            }
+        } else if (numero > 97 && numero <= 99.9) {
+            grau = 'raro'
+            let chance = 100 / 13;
+            const valor = Math.random() * 100;
+            if (valor <= 1 * chance) {
+                pet = 'Dragustar, o Morcego Vampírico'
+                img = './images/dragustar.png'
+            } else if (valor <= 2 * chance) {
+                pet = 'Horyong, Pequeno Dragão azul-celeste'
+                img = './images/horyong.png'
+            } else if (valor <= 3 * chance) {
+                pet = 'Akka Serenidade'
+                img = './images/akka.png'
+            } else if (valor <= 4 * chance) {
+                pet = 'Lamparino, o Mensageiro da Alma'
+                img = './images/lamparino.png'
+            } else if (valor <= 5 * chance) {
+                pet = 'Florida, o Anjo Verdejante'
+                img = './images/florida.png'
+            } else if (valor <= 6 * chance) {
+                pet = 'Raposa de Três Caudas da Neve'
+                img = './images/raposa.png'
+            } else if (valor <= 7 * chance) {
+                pet = 'Tougon, o Monge Violento'
+                img = './images/touro.png'
+            } else if (valor <= 8 * chance) {
+                pet = 'Oroonki, Esqueleto Coração de Leão'
+                img = './images/oronki.png'
+            } else if (valor <= 9 * chance) {
+                pet = 'Doggo, o Lobo Vermelho'
+                img = './images/doggo.png'
+            } else if (valor <= 10 * chance) {
+                pet = 'Cavalo Marinho da Investida Selvagem'
+                img = './images/cavalomarinho.png'
+            } else if (valor <= 11 * chance) {
+                pet = 'Ringring, o Verdilhão'
+                img = './images/ringring.png'
+            } else if (valor <= 12 * chance) {
+                pet = 'Porquínio Grunhista'
+                img = './images/porquinho.png'
+            }
+        } else if (numero > 99.9) {
+            grau = 'heroico'
+            const porc = Math.random() * 100
+            const valor = Math.random() * 100;
+            if (porc <= 33.36) {
+                const chance = 100 / 4;
+                if (valor <= 1 * chance) {
+                    pet = 'Suparna, o Pássaro Dourado'
+                    img = './images/suparna.png'
+                } else if (valor <= 2 * chance) {
+                    pet = 'Faísca, a Gema Brilhante'
+                    img = './images/faisca.png'
+                } else if (valor <= 3 * chance) {
+                    pet = 'Chifre Flamejante, o Diabo de Fogo'
+                    img = './images/chifre.png'
+                } else if (valor <= 4 * chance) {
+                    pet = 'Anjo da Morte, o Ceifeiro de Almas'
+                    img = './images/ceifeiro.png'
+                }
+            } else {
+                const chance = 100 / 8;
+                if (valor <= 1 * chance) {
+                    pet = 'Rei Leão Khun'
+                    img = './images/khun.png'
+                } else if (valor <= 2 * chance) {
+                    pet = 'Biyoho, Chama Nascida do Inferno'
+                    img = './images/biyoho.png'
+                } else if (valor <= 3 * chance) {
+                    pet = 'Baleiana, a Beleza Absoluta'
+                    img = './images/baleiana.png'
+                } else if (valor <= 4 * chance) {
+                    pet = 'Cristalidro, o Pavão Branco'
+                    img = './images/pavao.png'
+                } else if (valor <= 5 * chance) {
+                    pet = 'Sortitude, o Gato Sortudo'
+                    img = './images/sortitude.png'
+                } else if (valor <= 6 * chance) {
+                    pet = 'Shaoshao, o Maníaco das Pedras Preciosas'
+                    img = './images/shaoshao.png'
+                } else if (valor <= 7 * chance) {
+                    pet = 'Nianja Assassino'
+                    img = './images/nianja.png'
+                } else if (valor <= 8 * chance) {
+                    pet = 'Baratan, a Besta Relâmpago'
+                    img = './images/baratan.png'
+                }
+            }
+
+        }
+        return {
+            grau: grau,
+            pet: pet,
+            img: img
+        };
     }
 </script>
 
