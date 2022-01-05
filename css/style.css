@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    background: gray;
+}
+
+main{
+    width: 100vw;
+    text-align: center;
+}
+
+#buttons{
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+}
+
+#buttons button{
+    margin: 0 10px;
+    width: 150px;
+}
+
+#invocacoes{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+nav h1{
+    padding:10 10px;
+}
+
