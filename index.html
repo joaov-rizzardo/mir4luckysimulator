@@ -29,6 +29,7 @@
             invocados.value = parseInt(invocados.value) + 1
 
             let div = document.createElement('div');
+            div.className = "pet"
             let img = document.createElement('img');
             let pet = gerarAleatorio()
             console.log(pet)
@@ -199,11 +200,18 @@
             img: img
         };
     }
+
+    function resetaContagem(){
+        document.querySelector('#invocados').value = 0
+        document.querySelector('#requintado').value = 0
+        document.querySelector('#raros').value = 0
+        document.querySelector('#heroico').value = 0
+    }
 </script>
 
 <body>
     <nav>
-        <h1>Mir4 Lucky Simulator</h1>
+        <h1>Mir<span style="color:red;">4</span> Lucky Simulator</h1>
     </nav>
     
     <main>
@@ -232,13 +240,12 @@
         
 
         <section id="buttons">
-            <button onclick="invocaPet(1)" class="btn btn-dark">Invocar 1 pet</button>
-            <button onclick="invocaPet(11)" class="btn btn-dark">Invocar 11 pets</button>
+            <button onclick="invocaPet(1)" class="btn">Invocar 1 pet</button>
+            <button onclick="invocaPet(11)" class="btn">Invocar 11 pets</button>
+            <button onclick="resetaContagem()">Resetar</button>
         </section>
 
-        <section id="invocacoes">
-
-        </section>
+        <section id="invocacoes"></section>
     </main>
 </body>
 
