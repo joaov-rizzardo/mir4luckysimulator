@@ -37,4 +37,25 @@ main{
 nav h1{
     padding:10 10px;
 }
+input{
+    border: none;
+}
+
+#requintado{
+    color: green;
+}
+
+#raros{
+    color: blue;
+}
+
+#heroico{
+    color: red;
+}
+
+#info{
+    display: flex;
+    justify-content:center;
+    flex-wrap: wrap;
+}
 
